@@ -50,7 +50,7 @@ for product in sorted(courses_by_product.keys()):
     courses_available = sum(courses_by_product[product])
     sites_available = sites_by_product[product]
     print(
-        f"{product}: {courses_available}",
+        f"{product}: {courses_available:,} courses available",
         f"({len(courses_by_product[product])}/{sites_available} sites reporting)",
         file=content_string,
     )
