@@ -41,9 +41,7 @@ sites_by_product = collections.defaultdict(int)
 for result in data:
     order_label = result["order_label"]
     sites_by_product[order_label] += 1
-    if COURSES_AVAILABLE_KEY not in result:
-        courses_by_product[order_label].append(0)
-    else:
+    if COURSES_AVAILABLE_KEY in result:
         courses_by_product[order_label].append(int(result[COURSES_AVAILABLE_KEY]))
 
 content_string = StringIO()
