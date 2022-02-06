@@ -32,7 +32,6 @@ data = requests.get(
     f"within_circle(geocoded_address, 47.6637325, -122.3446932, {args.radius})"
 ).json()
 
-print(data)
 COURSES_AVAILABLE_KEY = "courses_available"
 
 courses_by_product = collections.defaultdict(list)
