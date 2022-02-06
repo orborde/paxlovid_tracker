@@ -29,8 +29,8 @@ args = parser.parse_args()
 
 #     "$where=order_label='Paxlovid' and "+
 data = requests.get(
-    "https://healthdata.gov/resource/rxn6-qnx8.json?$where=" +
-    "within_circle(geocoded_address, 47.6637325, -122.3446932, 10000)"
+    "https://healthdata.gov/resource/rxn6-qnx8.json?$limit=10000000&$where=" +
+    f"within_circle(geocoded_address, 47.6637325, -122.3446932, {args.radius})"
 ).json()
 
 print(data)
